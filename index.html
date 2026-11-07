@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gift Galaxy | Make Every Moment Special</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <header>
+
+        <nav class="navbar">
+
+            <a href="#" class="logo">
+                <i class="fa-solid fa-gift"></i>
+                Gift<span>Galaxy</span>
+            </a>
+
+            <ul class="nav-links" id="navLinks">
+
+                <li><a href="#home">Home</a></li>
+                <li><a href="#categories">Categories</a></li>
+                <li><a href="#products">Gifts</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+
+            </ul>
+
+            <div class="nav-icons">
+
+                <button class="icon-btn" onclick="openCart()">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+
+                <button class="menu-btn" onclick="toggleMenu()">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+    <!-- HERO SECTION -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <span class="hero-tag">
+                ✨ Make Every Moment Special
+            </span>
+
+            <h1>
+                Gifts That Speak
+                <span>From The Heart!</span>
+            </h1>
+
+            <p>
+                Discover beautiful gifts for your loved ones.
+                Make every celebration memorable with Gift Galaxy.
+            </p>
+
+            <a href="#products" class="primary-btn">
+                Explore Gifts
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+            <div class="hero-stats">
+
+                <div>
+                    <h3>500+</h3>
+                    <p>Happy Customers</p>
+                </div>
+
+                <div>
+                    <h3>100+</h3>
+                    <p>Unique Gifts</p>
+                </div>
+
+                <div>
+                    <h3>24/7</h3>
+                    <p>Support</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="hero-image">
+
+            <img src="https://images.unsplash.com/photo-1513201099705-a9746e1e201f?w=900"
+                alt="Beautiful gift boxes">
+
+        </div>
+
+    </section>
+
+
+    <!-- FEATURES SECTION -->
+
+    <section class="features">
+
+        <div class="feature-box">
+
+            <i class="fa-solid fa-truck-fast"></i>
+
+            <div>
+                <h3>Free Delivery</h3>
+                <p>On orders above ₹999</p>
+            </div>
+
+        </div>
+
+        <div class="feature-box">
+
+            <i class="fa-solid fa-gift"></i>
+
+            <div>
+                <h3>Beautiful Packaging</h3>
+                <p>Special gift wrapping</p>
+            </div>
+
+        </div>
+
+        <div class="feature-box">
+
+            <i class="fa-solid fa-shield-heart"></i>
+
+            <div>
+                <h3>Secure Shopping</h3>
+                <p>Safe shopping experience</p>
+            </div>
+
+        </div>
+
+        <div class="feature-box">
+
+            <i class="fa-solid fa-headset"></i>
+
+            <div>
+                <h3>Customer Support</h3>
+                <p>We're here to help</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CATEGORIES SECTION -->
+
+    <section class="categories section-padding" id="categories">
+
+        <div class="section-heading">
+
+            <span>Explore Our Collection</span>
+
+            <h2>Shop By Category</h2>
+
+            <p>Find the perfect gift for every special occasion.</p>
+
+        </div>
+
+        <div class="category-grid">
+
+            <div class="category-card" onclick="filterCategory('Birthday')">
+
+                <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=500"
+                    alt="Birthday gifts">
+
+                <h3>Birthday Gifts</h3>
+
+            </div>
+
+            <div class="category-card" onclick="filterCategory('Anniversary')">
+
+                <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=500"
+                    alt="Anniversary gifts">
+
+                <h3>Anniversary</h3>
+
+            </div>
+
+            <div class="category-card" onclick="filterCategory('Personalized')">
+
+                <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=500"
+                    alt="Personalized gifts">
+
+                <h3>Personalized</h3>
+
+            </div>
+
+            <div class="category-card" onclick="filterCategory('Flowers')">
+
+                <img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=500"
+                    alt="Flowers">
+
+                <h3>Flowers</h3>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PRODUCTS SECTION -->
+
+    <section class="products section-padding" id="products">
+
+        <div class="section-heading">
+
+            <span>Handpicked For You</span>
+
+            <h2>Our Bestselling Gifts</h2>
+
+            <p>Surprise your loved ones with something special.</p>
+
+        </div>
+
+
+        <!-- Search and Filter -->
+
+        <div class="product-controls">
+
+            <input type="text" id="searchInput"
+                placeholder="Search for gifts...">
+
+            <select id="categoryFilter">
+
+                <option value="All">All Categories</option>
+                <option value="Birthday">Birthday</option>
+                <option value="Anniversary">Anniversary</option>
+                <option value="Personalized">Personalized</option>
+                <option value="Flowers">Flowers</option>
+                <option value="Hampers">Hampers</option>
+
+            </select>
+
+        </div>
+
+
+        <!-- Products will be displayed using JavaScript -->
+
+        <div class="product-grid" id="productGrid">
+
+        </div>
+
+    </section>
+
+
+    <!-- SPECIAL BANNER -->
+
+    <section class="offer-banner">
+
+        <div>
+
+            <span>LIMITED TIME OFFER</span>
+
+            <h2>Make Someone Smile Today!</h2>
+
+            <p>
+                Get 20% OFF on your first gift order.
+                Celebrate love with Gift Galaxy.
+            </p>
+
+            <a href="#products" class="offer-btn">
+                Shop Now
+            </a>
+
+        </div>
+
+        <div class="offer-icon">
+            <i class="fa-solid fa-gift"></i>
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT SECTION -->
+
+    <section class="about section-padding" id="about">
+
+        <div class="about-image">
+
+            <img src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=800"
+                alt="Gift decoration">
+
+        </div>
+
+        <div class="about-content">
+
+            <span>About Gift Galaxy</span>
+
+            <h2>Making Every Celebration More Beautiful</h2>
+
+            <p>
+                Gift Galaxy is your one-stop destination for finding
+                meaningful and beautiful gifts for every occasion.
+            </p>
+
+            <p>
+                Whether it is a birthday, anniversary or a simple
+                surprise, we help you express your feelings through
+                thoughtful gifts.
+            </p>
+
+            <a href="#products" class="primary-btn">
+                Discover More
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- NEWSLETTER SECTION -->
+
+    <section class="newsletter" id="contact">
+
+        <h2>Join Our Gift Galaxy Family!</h2>
+
+        <p>
+            Subscribe to receive exciting offers and gift ideas.
+        </p>
+
+        <form id="newsletterForm">
+
+            <input type="email"
+                id="emailInput"
+                placeholder="Enter your email address"
+                required>
+
+            <button type="submit">
+                Subscribe
+            </button>
+
+        </form>
+
+        <p id="subscribeMessage"></p>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-container">
+
+            <div class="footer-about">
+
+                <a href="#" class="logo">
+                    <i class="fa-solid fa-gift"></i>
+                    Gift<span>Galaxy</span>
+                </a>
+
+                <p>
+                    Making happiness easier to gift.
+                    Find something special for everyone you love.
+                </p>
+
+                <div class="social-icons">
+
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+
+                    <a href="#"><i class="fa-brands fa-pinterest"></i></a>
+
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <h3>Quick Links</h3>
+
+                <a href="#home">Home</a>
+                <a href="#categories">Categories</a>
+                <a href="#products">Shop Gifts</a>
+                <a href="#about">About Us</a>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <h3>Categories</h3>
+
+                <a href="#products">Birthday Gifts</a>
+                <a href="#products">Anniversary Gifts</a>
+                <a href="#products">Flowers</a>
+                <a href="#products">Gift Hampers</a>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <h3>Contact Us</h3>
+
+                <p><i class="fa-solid fa-envelope"></i> hello@giftgalaxy.com</p>
+
+                <p><i class="fa-solid fa-phone"></i> +91 98765 43210</p>
+
+                <p><i class="fa-solid fa-location-dot"></i> India</p>
+
+            </div>
+
+        </div>
+
+        <div class="copyright">
+
+            <p>
+                © 2026 Gift Galaxy. All Rights Reserved.
+                Made with ❤️
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- SHOPPING CART SIDEBAR -->
+
+    <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+
+    <div class="cart-sidebar" id="cartSidebar">
+
+        <div class="cart-header">
+
+            <h2><i class="fa-solid fa-cart-shopping"></i> Your Cart</h2>
+
+            <button onclick="closeCart()" class="close-btn">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+
+        <div class="cart-items" id="cartItems">
+
+            <p class="empty-cart">Your cart is empty!</p>
+
+        </div>
+
+        <div class="cart-footer">
+
+            <h3>
+                Total: <span id="cartTotal">₹0</span>
+            </h3>
+
+            <button class="checkout-btn" onclick="checkout()">
+                Proceed to Checkout
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
